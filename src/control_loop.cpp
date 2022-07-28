@@ -66,7 +66,7 @@ ControlLoop<T>::ControlLoop(RobotControl& robot,
       control_callback_(std::move(control_callback)),
       limit_rate_(limit_rate),
       cutoff_frequency_(cutoff_frequency) {
-  bool throw_on_error = robot_.realtimeConfig() == RealtimeConfig::kEnforce;
+  bool throw_on_error = robot_.realtimeConfig() == RealtimeConfig::kIgnore;
   std::string error_message;
   if (!setCurrentThreadToHighestSchedulerPriority(&error_message) && throw_on_error) {
     throw RealtimeException(error_message);

@@ -24,7 +24,7 @@ class Robot::Impl : public RobotControl {
  public:
   explicit Impl(std::unique_ptr<Network> network,
                 size_t log_size,
-                RealtimeConfig realtime_config = RealtimeConfig::kEnforce);
+                RealtimeConfig realtime_config = RealtimeConfig::kIgnore);
 
   RobotState update(const research_interface::robot::MotionGeneratorCommand* motion_command,
                     const research_interface::robot::ControllerCommand* control_command) override;

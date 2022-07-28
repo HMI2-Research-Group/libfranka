@@ -63,7 +63,7 @@ class Robot {
    * @throw IncompatibleVersionException if this version of `libfranka` is not supported.
    */
   explicit Robot(const std::string& franka_address,
-                 RealtimeConfig realtime_config = RealtimeConfig::kEnforce,
+                 RealtimeConfig realtime_config = RealtimeConfig::kIgnore,
                  size_t log_size = 50);
 
   /**
